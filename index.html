@@ -52,12 +52,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/vep.loader.js";
+      var loaderUrl = buildUrl + "/web.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/vep.data",
-        frameworkUrl: buildUrl + "/vep.framework.js",
-        codeUrl: buildUrl + "/vep.wasm",
+        dataUrl: buildUrl + "/web.data",
+        frameworkUrl: buildUrl + "/web.framework.js",
+        codeUrl: buildUrl + "/web.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Telegram-miniApp",
@@ -117,9 +117,9 @@
           document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
               }).then((unityInstance) => {
                 document.querySelector("#unity-loading-bar").style.display = "none";
-                //document.querySelector("#unity-fullscreen-button").onclick = () => {
-                //  unityInstance.SetFullscreen(1);
-                //};
+                document.querySelector("#unity-fullscreen-button").onclick = () => {
+                  unityInstance.SetFullscreen(1);
+                };
 
               }).catch((message) => {
                 alert(message);
